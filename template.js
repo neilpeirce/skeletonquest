@@ -67,7 +67,7 @@ function addClassEmpty(){
 }
 /* Adapt column hover */
 function hovercolumn(){
-    $(".question-wrapper:not(.array-flexible-duel-scale) .answers-wrapper table.question").delegate('td','mouseover mouseleave', function(e) {
+    $(".question-wrapper:not(.array-flexible-duel-scale) .answers-wrapper table.question").delegate('tbody td','mouseover mouseleave', function(e) {
         if (e.type == 'mouseover') {
           $(this).closest("table.question").find("col").eq($(this).index()).addClass("hover");
           $(this).closest("table.question").find("thead tr").children().eq($(this).index()).addClass("hover");
@@ -77,7 +77,7 @@ function hovercolumn(){
           $(this).closest("table.question").find("thead tr").children().eq($(this).index()).removeClass("hover");
         }
     });
-    $(".array-flexible-duel-scale .answers-wrapper table.question").delegate('td','mouseover mouseleave', function(e) {
+    $(".array-flexible-duel-scale .answers-wrapper table.question").delegate('tbody td','mouseover mouseleave', function(e) {
         if (e.type == 'mouseover') {
           $(this).closest("table.question").find("col").eq($(this).index()).addClass("hover");
           $(this).closest("table.question").find("thead tr:not(.groups)").children().eq($(this).index()).addClass("hover");
