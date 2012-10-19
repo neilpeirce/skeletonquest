@@ -25,7 +25,8 @@
 /* BASIC COLOR ADAPTATION */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font:inherit;}
 body{background:#fff;color:#444;}
-body{font:1em/1.5 "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;}
+html{font:1em/1.5 "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;}
+body{font-size:14px}
 .wrapper,#content{max-width:60em;width:auto !important; width:60em}
 h1,h2,h3,h4,h5,h6{color:#181818;font-family: Georgia, "DejaVu Serif", Norasi, serif;}
 strong{color:#333;}
@@ -67,7 +68,8 @@ a:hover, a:focus, a:active { color: #000; }
 /* ======================================================== */
 /* Base style only                                          */
 /* #Reset & Basics (Inspired by E. Meyers)                  */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;vertical-align:baseline;margin:0;padding:0;}
+html,body{border:0;vertical-align:baseline;margin:0;padding:0;}
+div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;vertical-align:baseline;margin:0;padding:0;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
 body{line-height:1;}
 html,body{height:100.1%}
@@ -114,6 +116,7 @@ ul#surveylist{list-style:none}
 #progress-wrapper{width:252px;font-size:12px;height:20px;}
 #progress-wrapper #progress-pre{float:left;width:45px;text-align:right;margin:0 5px 0 0}
 #progress-wrapper .ui-widget-content{float:left;width:150px;height:1em;text-align:left;border-color:#666;border-style:solid;border-width:1px}
+@media handled,screen and (max-width: 240px) {#progress-wrapper .ui-widget-content{width:100px;}}
 #progress-wrapper .ui-widget-header{background-color:#AAA;background-image:none;border:1px solid #666}
 #progress-wrapper #progress-post{float:left;width:45px;text-align:left;margin:0 0 0 5px}
 @media reader {
@@ -130,7 +133,7 @@ p,dl{margin:.75em 0}
 em,q,cite{font-style:italic}
 
 /* --------------------------------------------- */
-/* Basic adaptation of the template :            */
+/* More adaptation of the template :            */
 /* color and image                               */
 /* --------------------------------------------- */
 p{margin:0 0 0.5em;}
@@ -147,7 +150,6 @@ ul#surveylist li a.surveytitle{color:#222;}
 .good{color:#494}
 .problem{color:#944}
 
-.help-wrapper,.answers-wrapper .tip{/*font-size:0.9em;*/}
 .help-wrapper .error,.help-wrapper .good,.help-wrapper .problem,p.tip.error,p.tip.problem,p.tip.good{background-image: url(error.png);background-repeat:no-repeat}
 .help-wrapper .error,.help-wrapper .problem,p.tip.error,p.tip.problem{padding-left:20px;background-position:0 center;}
 .help-wrapper .good,p.tip,p.tip.good{padding-left:0;background-position:-20px center;}
@@ -421,7 +423,7 @@ textarea[disabled], input.text[disabled], input[type=text][disabled]{background-
 }
 
 /* --------------------------------------------- */
-/* More template adaptation                       */
+/* More and more template adaptation                       */
 /* --------------------------------------------- */
 #container{margin:0;} /* Global container */
 .ie6 #container,.ie7 #container{text-align:center}
@@ -525,7 +527,7 @@ p#therearexquestions{margin:0;font-style:italic;font-size:0.9em;color:#666}
 
 
 /* Question decoration */
-.question-wrapper{margin:1em 5px;}
+.question-wrapper{margin:1em 5px}
 .question-wrapper:hover{box-shadow: 0 0 5px #999;margin:1em 5px;}
 .question-text{border-bottom:none 0px #FFF;}
 .question-wrapper .answers-wrapper{overflow:hidden;}
@@ -534,7 +536,7 @@ p#therearexquestions{margin:0;font-style:italic;font-size:0.9em;color:#666}
     .question-wrapper:hover,.question-wrapper{margin:1em 0;}
 }
 
-.question-help{padding:0 5px;margin:0 auto;clear:both;overflow:auto;}
+.question-help{padding:0 5px;margin:0 auto;overflow: auto;clear:both;}
 .question-help img{margin:1px 5px 5px 1px;}
 
 /* tip bloc */
@@ -558,7 +560,7 @@ p#therearexquestions{margin:0;font-style:italic;font-size:0.9em;color:#666}
 .help-wrapper .problem{color:#944}
 .help-wrapper .errormandatory{color:#944;font-weight:700;}
 .help-wrapper .errormandatory br:first,.help-wrapper .errormandatory strong br:first{display:none;}
-.mandatory br{display:none;}/* don't put linefeed at start of an error box */
+.mandatory .help-wrapper .mandatory br{display:none;}/* don't put linefeed at start of an error box */
 
 .help-wrapper .mandatory{display:none;}
 .input-error .help-wrapper .mandatory{display:block;}
@@ -670,7 +672,7 @@ table.question tbody td{text-align:center;vertical-align:middle}
 table.question tbody th,table.question thead th
 {
   -ms-word-break: break-all;
-  word-break: break-all;
+  /*word-break: break-all;*/
   word-break: break-word;// Non standard for webkit
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -804,51 +806,50 @@ padding:0 0.5em;
 	  padding:4px 0;
   }
 }
- .multiple-opt-comments ul
-,.multiple-short-txt ul
-,.numeric-multi ul
-,.multiple-opt ul
+ .multiple-opt-comments .answers-wrapper ul
+,.multiple-short-txt .answers-wrapper ul
+,.numeric-multi .answers-wrapper ul
+,.multiple-opt .answers-wrapper ul
 {
 	padding: 0;
 	margin: 1em 0;
 	width:99%;
 }
 
-.numeric-multi ul	{}
-.numeric-multi ul.computed
+.numeric-multi .answers-wrapper ul.computed
 {
 	float:left;
 	padding-left: 0;padding-right: 2em;
 }
-.numeric-multi ul.slider.computed
+.numeric-multi .answers-wrapper ul.slider.computed
 {
 	width: 14em;
 }
 
-.numeric-multi ul
-,.multiple-opt ul
-,.multiple-opt-comments ul
-,.multiple-short-txt ul
+.numeric-multi .answers-wrapper ul
+,.multiple-opt .answers-wrapper ul
+,.multiple-opt-comments .answers-wrapper ul
+,.multiple-short-txt .answers-wrapper ul
 {
 	display: block;
 	width:99%;
 }
-.numeric-multi ul li
-, .multiple-opt ul li
-, .multiple-opt-comments ul li
-, .multiple-short-txt ul li
+.numeric-multi .answers-wrapper ul li
+, .multiple-opt .answers-wrapper ul li
+, .multiple-opt-comments .answers-wrapper ul li
+, .multiple-short-txt .answers-wrapper ul li
 {
 	display: block;
 }
 
-.numeric-multi ul li label
-,.multiple-short-txt ul li label
+.numeric-multi .answers-wrapper ul li label
+,.multiple-short-txt .answers-wrapper ul li label
 {
 	text-align:right;
 	}
 @media handled,screen and (max-width: 640px) {
-.numeric-multi ul li label
-,.multiple-short-txt ul li label
+.numeric-multi .answers-wrapper ul li label
+,.multiple-short-txt .answers-wrapper ul li label
 {
 	text-align:left;
 	}
@@ -872,9 +873,9 @@ padding:0 0.5em;
 @media handled,screen and (max-width: 440px) {
     .slider_callout {margin-left: -0.5em;top: -2em;}
 }
-.numeric-multi ul li span.input
-,.multiple-opt-comments ul li span.comment
-,.multiple-short-txt ul li span
+.numeric-multi .answers-wrapper ul li span.input
+,.multiple-opt-comments .answers-wrapper ul li span.comment
+,.multiple-short-txt .answers-wrapper ul li span
 {
 	text-align: left;
 }
@@ -898,7 +899,7 @@ padding:0 0.5em;
 {
 	display:table-cell;
 	vertical-align:middle;
-	width:50%;
+/*	width:50%;*/
 	padding:0.3em 0.5em 0.7em;
 }
 
@@ -923,9 +924,9 @@ padding:0 0.5em;
 	text-align:center;
 	font-weight:700;
 }
-.ie6 .numeric-multi ul li label,.ie7 .numeric-multi ul li label
-,.ie6 .multiple-opt-comments ul li span.option,.ie7 .multiple-opt-comments ul li span.option
-,.ie6 .multiple-short-txt ul li label,.ie7 .multiple-short-txt ul li label
+.ie6 .numeric-multi .answers-wrapper ul li label,.ie7 .numeric-multi .answers-wrapper ul li label
+,.ie6 .multiple-opt-comments .answers-wrapper ul li span.option,.ie7 .multiple-opt-comments .answers-wrapper ul li span.option
+,.ie6 .multiple-short-txt .answers-wrapper ul li label,.ie7 .multiple-short-txt .answers-wrapper ul li label
 {
 	clear:left;
 	float:left; 
@@ -1199,7 +1200,7 @@ padding:0 0.5em;
 }
 
 @media handled,screen and (max-width: 440px) {
-    input.text,textarea{max-width:96%}
+    input.text,textarea{max-width:90%}
 }
 /* multi column */
 @media handled,screen and (min-width: 680px) {

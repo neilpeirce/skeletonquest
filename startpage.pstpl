@@ -17,7 +17,7 @@
 <div id="container">
 	<div id="head">
 		<div class="wrapper">
-		<!-- Pour ajouter des logos -->
+		<!-- To add logo easily -->
 			<!--<a href="#" title=" " ><img src="{TEMPLATEURL}logo0.png" alt=" " class="logo"/></a>-->
 			<!--<a href="#" title=" " ><img src="{TEMPLATEURL}logo1.png" alt=" " class="logo"/></a>-->
 			<!--<a href="#" title=" " ><img src="{TEMPLATEURL}logo2.png" alt=" " class="logo"/></a>-->
