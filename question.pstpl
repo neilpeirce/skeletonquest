@@ -10,5 +10,7 @@
 	<div class="answers-wrapper">
 		{ANSWER}
 	</div>
-	<div class="question-help">{QUESTIONHELP}</div>
+	<div class="question-help">
+		{QUESTIONHELP}
+	</div>
 </div>
