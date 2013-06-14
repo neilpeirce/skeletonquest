@@ -1,9 +1,15 @@
-/*
- * skeletonquest for LimeSurvey
- * Copyright (C) 2012 Sondages Pro (http://www.sondages.pro
- * All rights reserved.
- * License: GNU/GPL License v2 or later, see LICENSE.php
- */
+/*  This file is part of Lime Survey Template : SkeletonQuest
+
+  Copyright (C) 2010-2013 Denis Chenu for http://sondages.pro
+  Distributed under GPL 3 licence
+  Distributed under MIT licence
+  Inspiration by Skeleton V1.1, Copyright 2011, Dave Gamache, http://www.getskeleton.com under open-source MIT license
+  Inspiration by Spip-dist http://www.spip.net/ , Collectif SPIP distributed under GPL licence
+  Inspiration by THE CSS NINJA http://cssn.in/ja/023, Ryan Seddon
+  Inspiration by Bootstrap http://getbootstrap.com/ under Apache License.
+  Inspiration by jquery mobile http://jquerymobile.com/ under Dual licensed under the MIT or GPL Version 2 licenses.
+  Tango Icon Project http://tango.freedesktop.org/ distributed under Public Domain
+*/
 
 $(document).ready(function(){
     /* Put other input inside label pre 120814 */
