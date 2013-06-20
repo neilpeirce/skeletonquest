@@ -344,7 +344,7 @@ button.submit {position:relative;}
 button.submit .ui-icon{display:inline-block;position:relative;bottom:-3px;margin:0 -5px;}
 input.submit[disabled] .ui-icon,button[disabled] .ui-icon,select[disabled] .ui-icon
 {visibility:hidden}
-button.ui-datepicker-trigger{padding:0}
+button.ui-datepicker-trigger{padding:3px 8px}
 /*.dragDropTable ul.dragDropChoiceList li, .dragDropTable ol.dragDropRankList li {display:block}*/
 /*.dragDropTable .dragDropChoices, .dragDropTable .dragDropRanks{display:block}*/
 /* Fix for odd Mozilla border & padding issues */
