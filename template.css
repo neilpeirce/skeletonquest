@@ -344,7 +344,13 @@ button.submit {position:relative;}
 button.submit .ui-icon{display:inline-block;position:relative;bottom:-3px;margin:0 -5px;}
 input.submit[disabled] .ui-icon,button[disabled] .ui-icon,select[disabled] .ui-icon
 {visibility:hidden}
-button.ui-datepicker-trigger{padding:3px 8px}
+button.ui-datepicker-trigger{padding:3px 8px 2px;}
+.ui-datepicker td span, .ui-datepicker td a
+{
+padding:0;text-align:center;
+}
+.ui-datepicker-calendar{table-layout:fixed}
+.ui-datepicker-calendar td,.ui-datepicker-calendar th{width:14.25%}
 /*.dragDropTable ul.dragDropChoiceList li, .dragDropTable ol.dragDropRankList li {display:block}*/
 /*.dragDropTable .dragDropChoices, .dragDropTable .dragDropRanks{display:block}*/
 /* Fix for odd Mozilla border & padding issues */
@@ -421,7 +427,7 @@ textarea {min-height: 5em; }
 input[type="checkbox"] {display: inline; }
 textarea[disabled], input.text[disabled], input[type=text][disabled]{background-color:#FFF;border-color:#EEE;}
 
-.no-js input.saveall,.no-js input.clearall,.no-js input#moveprevbtn  {display:none}
+.no-js input.saveall,.no-js input.clearall,.no-js #moveprevbtn  {display:none}
 
 .asterisk {display:none}
 .mandatory .asterisk {display:inline;display:inline-block;}
