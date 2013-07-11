@@ -251,9 +251,9 @@ body .ui-tooltip { border-width: 2px; }
   border: 1px solid #aaa;
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+/*  -moz-border-radius: 3px;*/
+/*  -webkit-border-radius: 3px;*/
+/*  border-radius: 3px;*/
   color: #444;
 /*  display: inline;display: inline-block;*/
   font-size: 1em;
@@ -299,6 +299,7 @@ body .ui-tooltip { border-width: 2px; }
 .ui-slider-handle, .ui-widget-content .ui-slider-handle, .ui-widget-header .ui-slider-handle { 
     padding:0;
 }
+.ui-datepicker td a.ui-state-default { padding: .2em; }
 /*.ui-slider-handle, .ui-widget-content .slider-handle, .ui-widget-header .slider-handle{padding:0}*/
 /* Interaction Cues
 ----------------------------------*/
