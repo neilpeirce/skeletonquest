@@ -653,6 +653,10 @@ input[type="text"].tip,input.tip,input.tip{border:0;background:transparent}
 .surveytitle {}
 .surveytitle:hover {}
 /* Printed version */
+.printouttable{
+width:100%;
+table-layout:fixed;
+}
 .printanswersquestion{
   background-color:#f8f8f8
 }
@@ -667,11 +671,22 @@ input[type="text"].tip,input.tip,input.tip{border:0;background:transparent}
   font-weight:bold;
   padding-top:1em;
 }
-
+.printanswersanswertext{
+width:30%;
+vertical-align:middle;
+padding:0 1em;
+}
 
 .printanswersgroup{border-top:2px solid #444;color:#222;border-bottom:1px solid #999;}
 .printanswersquestion{border-bottom:1px solid #999;}
 .printanswersanswertext{width:40%;}
+ .printanswersquestion img, .printanswersanswertext img
+,.printanswersquestion video, .printanswersanswertext video
+,.printanswersquestion svg, .printanswersanswertext svg
+{
+max-width:100%;
+*width:100%;
+}
 /* Question text inside */
 .question-text img
 {
