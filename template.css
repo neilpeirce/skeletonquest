@@ -709,7 +709,7 @@ table.question tbody th{border-width:1px 1px 0px 1px;border-style:solid;padding:
 table.question tbody td{border-width:1px 1px 0px 0px;border-style:solid;padding:8px 0;}
 table.question tbody th.answertext,table.question tbody th.arraycaptionleft{text-align:right;}
 table.question tbody th.answertextright{text-align:left;}
-table.question thead th{text-align:center;vertical-align:middle}
+table.question thead th{text-align:center;vertical-align:bottom}
 table.question tbody td{text-align:center;vertical-align:middle}
 table.question tbody td.ddarrayseparator{border-top-width: 0px;}
 
