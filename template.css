@@ -209,22 +209,23 @@ table.question th {background:#fff}
 
 table.question thead th {background:#fff}
 table.question th {background:#fff}
-table.question tr.array1
-,table.question tbody tr.array1 th
-,table.question tbody tr.array1:hover th
+table.question tbody tr:hover {background:#eee}
+.js table.question tbody tr td:hover{background:#ddd}
+
+ table.question tr
+,table.question tbody tr th
+,table.question tbody tr:hover th
 ,.js table.question tbody tr td.answertextright:hover
-,.js table.question tbody tr.array1 td.dual_scale_separator:hover
-,.js table.question tbody tr.array1 td.ddarrayseparator:hover
+,.js table.question tbody tr td.dual_scale_separator:hover
+,.js table.question tbody tr td.ddarrayseparator:hover
   {background:#fff}
-table.question tr.array2
+ table.question tr.array2
 ,table.question tbody tr.array2 th
 ,table.question tbody tr.array2:hover th
-,.js table.question tbody tr td.answertextright:hover
+,.js table.question tbody tr.array2 td.answertextright:hover
 ,.js table.question tbody tr.array2 td.dual_scale_separator:hover
 ,.js table.question tbody tr.array2 td.ddarrayseparator:hover
   {background:#f9f9f9}
-table.question tbody tr:hover {background:#eee}
-.js table.question tbody tr td:hover{background:#ddd}
 
 /*@media handled,screen and (max-width: 440px) {*/
 /*table.question th,table.question td {display:block}*/
