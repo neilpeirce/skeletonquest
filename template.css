@@ -627,7 +627,7 @@ p#therearexquestions{margin:0;font-style:italic;font-size:0.9em;color:#666}
 .help-wrapper .success,.help-wrapper .good,.help-wrapper .ok{color:#444}
 .help-wrapper .problem{color:#944}
 .help-wrapper .errormandatory{color:#944;font-weight:700;}
-.help-wrapper .errormandatory br:first-of-type,.help-wrapper .errormandatory strong br:first-child{display:none;}
+.help-wrapper .error.mandatory br:first-of-type,.help-wrapper .error.mandatory strong br:first-child{display:none;}
 
 .help-wrapper .mandatory{display:none;}
 .input-error .help-wrapper .mandatory{display:block;}
