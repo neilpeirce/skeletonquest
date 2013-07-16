@@ -1,10 +1,10 @@
 </div><!--endcontent-->
 <div id="footer">
 	<ul id="credits">
-	<li class="first">Powered by Libre Software</a>
+	<li class="first">Powered by Libre Software
 	<li>Template &copy; <a href="http://www.sondages.pro" title="Sondages en ligne, enquêtes et recueil de données par Internet.">Denis Chenu, Sondages Pro</a> 
 	</li>
-	<li class="last">This template is distributed under MIT and GPL licence </li>
+	<li class="last">This template is distributed under <a href="{TEMPLATEURL}Copyright.txt">MIT and GPL licence</a> </li>
 	</ul>
 </div>
 </div><!-- end container-->
