@@ -17,9 +17,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* Some base adaptation               */
 /*================================================= */
 body{background:#fff;color:#444;}
+body{font:1em/1.5 HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif}
+body{font-size:14px}
 h1,h2,h3,h4,h5,h6{color:#181818;font-family:Georgia, "Times New Roman", Helvetica, Arial, sans-serif;}
-a, a:visited { color: #333;}
-a:hover, a:focus, a:active { color: #000; }
+a, a:visited { color: #333; text-decoration: underline; }
+a:hover, a:focus { color: #000; }
 /* Largeur maximale */
 .wrapper,#content{margin:0 auto;}
 .wrapper,#content{max-width:940px;width:auto !important; width:940px}
@@ -82,7 +84,6 @@ a:hover, a:focus, a:active { color: #000; }
 ================================================== */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
-body{line-height:1;}
 html,body{height:100.1%}
 ol,ul{list-style:none;}
 blockquote,q{quotes:none;}
@@ -102,15 +103,14 @@ p{margin:0 0 1em;}
 p img{margin:0;}
 em{font-style:italic;}
 strong{font-weight:700;}
-small{font-size:80%;}
+small{font-size:0.8em;}
 blockquote, blockquote p { color: #777; font-style: italic; }
 blockquote { margin: 0 0 1em; padding: 0.5em 1em 0 1em; border-left: 1px solid #ddd; }
 blockquote cite { display: block; font-size: 1em; color: #555; }
 blockquote cite:before { content: "\2014 \0020"; }
+a, a:visited { outline: 0; }
 blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
 hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
-a, a:visited { color: #333; text-decoration: underline; outline: 0; }
-a:hover, a:focus { color: #000; }
 p a, p a:visited { line-height: inherit; }
 ul, ol { margin-bottom: 1em; }
 ul { list-style: none outside; }
@@ -125,7 +125,7 @@ ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
 	
 ul#surveylist{list-style:none}
 .hide{position:absolute;top:auto;left:-999999px}
-#progress-wrapper{width:252px;font-size:12px;height:20px;}
+#progress-wrapper{width:272px;font-size:12px;height:20px;}
 #progress-wrapper #progress-pre{float:left;width:45px;text-align:right;margin:0 5px 0 0}
 #progress-wrapper .ui-widget-content{float:left;width:150px;height:1em;text-align:left;border-color:#666;border-style:solid;border-width:1px}
 #progress-wrapper .ui-widget-header{background-color:#AAA;background-image:none;border:1px solid #666}
@@ -162,8 +162,7 @@ em,q,cite{font-style:italic}
 /*================================================= */
 /* More adaptation                  */
 /*================================================= */
-body{font:1em/1.5 HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif}
-body{font-size:14px}
+
 p{margin:0 0 0.5em;}
 p img{margin:0;}
 strong{}
@@ -198,8 +197,8 @@ table.question tr{border-color:#ddd;}
 table.question th{border-color:#ddd;}
 table.question td{border-color:#eee;min-width:50px;}
 table.question thead td{border-color:#ddd;}
-
-table.question tbody td.ddarrayseparator:hover{background:#eee;}
+table.question tbody tr:hover {background:#eee}
+.js table.question tbody tr td:hover{background:#ddd}
 
 .array-flexible-column table.question col.even {background:#fff}
 .array-flexible-column table.question col.odd {background:#f9f9f9}
@@ -209,9 +208,6 @@ table.question th {background:#fff}
 
 table.question thead th {background:#fff}
 table.question th {background:#fff}
-table.question tbody tr:hover {background:#eee}
-.js table.question tbody tr td:hover{background:#ddd}
-
  table.question tr
 ,table.question tbody tr th
 ,table.question tbody tr:hover th
@@ -628,7 +624,6 @@ p#therearexquestions{margin:0;font-style:italic;font-size:0.9em;color:#666}
 .help-wrapper .problem{color:#944}
 .help-wrapper .errormandatory{color:#944;font-weight:700;}
 .help-wrapper .error.mandatory br:first-of-type,.help-wrapper .error.mandatory strong br:first-child{display:none;}
-
 .help-wrapper .mandatory{display:none;}
 .input-error .help-wrapper .mandatory{display:block;}
 .answer-wrapper .tip{text-align:left;font-size:0.8em;}
