@@ -1,6 +1,7 @@
 {CHECKJAVASCRIPT}
 <div id="welcome">
-	<p id='surveydescription' class="text">{SURVEYDESCRIPTION}</p>
-	<p id='surveywelcome' class="text">{WELCOME}</p>
+	<div id='surveydescription' class="text">{SURVEYDESCRIPTION}</div>
+	<div id='surveywelcome' class="text">{WELCOME}
 	<p id="therearexquestions" class="text">{THEREAREXQUESTIONS}</p>
+	</div>
 </div>
