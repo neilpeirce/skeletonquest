@@ -751,8 +751,8 @@ ul.radio-list .question-item,ul.radio-list .help-item
 ,ul.checkbox-list input.radio,ul.checkbox-list input.checkbox
 {
   position: absolute;
-  top:30%;
-  left: 5px;
+  margin:0;font-size:100%;/* To use em on position */
+  top: 1.2em;left:0.5em;/* padding of label is 0.8em +0.4em to move it*/
 }
 .ielt8 ul.radio-list input.radio,.ielt8 ul.radio-list input.checkbox
 ,.ielt8 ul.checkbox-list input.radio,.ielt8 ul.checkbox-list input.checkbox
