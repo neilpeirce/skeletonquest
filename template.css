@@ -992,7 +992,10 @@ ul.cols-8 .answer-item:nth-child(8n+9) {clear:left;}
 
 /* Some specific question type */
 .multinum-slider{text-align:center;display:inline;}	
-.ui-slider{width:15em;display:inline;display:inline-block;border-width:1px;border-style:solid;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;margin:.4em 0 .2em}
+.ui-slider{display:inline;display:inline-block;border-width:1px;border-style:solid;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;margin:.4em 1em .2em}
+.ui-slider{width:15em}/* Default is 12 */
+.ui-datepicker .ui-slider{margin:.4em 0 .2em;width:100%}/* Default is 12 */
+.ui-datepicker {max-width:100%}/* TODO : force left to 0 for little screen */
 .slider_showmin{float:left;width:3em;font-size:.7em;font-weight:400;text-align:left;margin:1.4em 0 0}
 .slider_showmax{float:right;width:3em;font-size:.7em;font-weight:400;text-align:right;margin:1.4em 0 0}
 .slider_lefttext{display:inline-block;position:relative;top:-.5em;padding-right:1em;text-align:right;font-size:.9em;}
