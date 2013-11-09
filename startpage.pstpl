@@ -16,12 +16,12 @@
 <!--[if IE 7 ]> <div id="container" class="ie ie7 ielt8 ielt9"> <![endif]-->
 <!--[if IE 8 ]> <div id="container" class="ie ie8 ielt9"> <![endif]-->
 <!--[if IE 9 ]> <div id="container" class="ie ie9 "> <![endif]-->
-<!--[if gt IE 9]><!--><div id="container" id="body"><!--<![endif]-->
+<!--[if gt IE 9]><!--><div id="container"><!--<![endif]-->
 	<div id="head">
 		<div class="wrapper">
 			<!--<a href="#" title="Made with LimeSurvey" id="link-logo"><img src="{TEMPLATEURL}logo.png" alt=" " id="logo"/></a>-->
 			<div class="tools">{LANGUAGECHANGER}</div><h1 id="sitename">{SITENAME}</h1>
 		</div>
 	</div>
-<div id="title"><h2 id="surveytitle" class="wrapper">{SURVEYNAME}</h2></div>
-	<div id="content" class="outerframe">
+	<div id="title"><h2 id="surveytitle" class="wrapper">{SURVEYNAME}</h2></div>
+	<div id="content" class="wrapper">

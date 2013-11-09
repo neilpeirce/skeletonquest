@@ -94,3 +94,33 @@ function movePrevButton(){
         $('<br />').insertAfter('#movenextbtn');
     }
 }
+/* Fire event hide and show for "Expression Manager" hide/show */
+jQuery(function($) {
+    var _oldShow = $.fn.show;
+    $.fn.show = function(speed, oldCallback) {
+        return $(this).each(function() {
+        var obj = $(this),
+        newShowCallback = function() {
+            //console.log('afterShow');
+            obj.trigger('afterShow');
+        };
+        obj.trigger('beforeShow');
+        _oldShow.apply(obj, [speed, newShowCallback]);
+        });
+    }
+    var _oldHide = $.fn.hide;
+    $.fn.hide = function(speed, oldCallback) {
+        return $(this).each(function() {
+        var obj = $(this),
+        newHideCallback = function(obj) {
+            if ($.isFunction(oldCallback)) {
+              oldCallback.apply(obj);
+            }
+            //console.log('afterHide');
+            obj.trigger('afterHide');
+        };
+        obj.trigger('beforeHide');
+        _oldHide.apply(obj, [speed, newHideCallback]);
+        });
+    }
+});
