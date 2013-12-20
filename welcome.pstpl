@@ -1,7 +1,7 @@
 {CHECKJAVASCRIPT}
 <div id="welcome">
-	<div id='surveydescription' class="text">{SURVEYDESCRIPTION}</div>
+	{if(!is_empty(SURVEYDESCRIPTION),"<div class='text' id='surveydescription'>"+SURVEYDESCRIPTION+"</div>","")}
 	<div id='surveywelcome' class="text">{WELCOME}
-	<p id="therearexquestions" class="text">{THEREAREXQUESTIONS}</p>
+	{if(!is_empty(THEREAREXQUESTIONS),"<p id='therearexquestions' class='text'>"+THEREAREXQUESTIONS+"</p>","")}
 	</div>
 </div>

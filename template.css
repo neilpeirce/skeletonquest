@@ -427,12 +427,13 @@ textarea[disabled], input.text[disabled], input[type=text][disabled]{background-
 
 .no-js input.saveall,.no-js input.clearall,.no-js #moveprevbtn  {display:none}
 
-.asterisk {display:none}
-.mandatory .asterisk {display:inline;display:inline-block;}
+.asterisk {display:inline;display:inline-block;}
 .asterisk {color:#FF8900;}
-.showqnumcode-X .qnumcode {display:none;}
+/* Uncomment this part if you like impage */
+/*.asterisk{width:20px;min-height:16px;}*/
+/*.asterisk:after{content:url(mandatory.png)}*/
+/*.asterisk:after{display:inline-block;height:1em;min-height:16px;width:20px;margin-left:-8px;}*/
 .qnumcode {font-style:italic;color:#888}
-/*.asterisk{background:transparent url(mandatory.png) no-repeat center;height:1em;min-height:16px;width:20px;text-indent:-30px;}*/
 
 /* index */
 #index .container{margin-top: 2em;border: 1px solid;}
@@ -575,18 +576,19 @@ p#therearexquestions{margin:0;font-style:italic;font-size:0.9em;color:#666}
   .question-wrapper{margin:1em 0;}
 }
 
-.question-help,.help{padding:0 5px;margin:0.5em auto 0;clear:both;}
+.question-help,.help{padding:0 5px;margin:0.5em auto;clear:both;}
 .question-help img{margin:1px 5px 5px 1px;}
 
 /* tip bloc */
 
-.help-wrapper ,.tip{font-style:italic;margin:0.5em auto;line-height: 150%;}
+.help-wrapper ,.tip{font-style:italic;line-height: 150%;}
+.tip{margin:0.5em auto;}
 .help-wrapper{padding:0 5px;}
-.help-wrapper .mandatory,.help-wrapper .questionhelp,.help-wrapper .tip {font-size:0.8em;}
+.help-wrapper .mandatory,.help-wrapper .questionhelp,.help-wrapper .tip {font-size:0.8em;margin:0.5em 0;}
 .answers-wrapper .tip {font-size:0.8em;}
 .help-wrapper .error,.help-wrapper .error-wrapper{color:#944;}
 /*.help-wrapper .error{text-shadow: #FE4 1px 1px 2px;}*/
-.input-error .help-wrapper{font-weight:700}
+.input-error .help-wrapper .error{font-weight:700}
   .ie6 .help-wrapper .error,.ie6 .help-wrapper .error-wrapper
 , .ie7 .help-wrapper .error,.ie7 .help-wrapper .error-wrapper
 , .ie8 .help-wrapper .error,.ie8 .help-wrapper .error-wrapper
@@ -991,15 +993,20 @@ ul.cols-8 .answer-item:nth-child(8n+9) {clear:left;}
 /* End multi column */
 
 /* Some specific question type */
-.multinum-slider{text-align:center;display:inline;}	
-.ui-slider{display:inline;display:inline-block;border-width:1px;border-style:solid;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;margin:.4em 1em .2em}
-.ui-slider{width:15em}/* Default is 12 */
+.boilerplate .answers-wrapper{display:none}
+.equation .answers-wrapper{display:none}
+
 .ui-datepicker .ui-slider{margin:.4em 0 .2em;width:100%}/* Default is 12 */
 .ui-datepicker {max-width:100%}/* TODO : force left to 0 for little screen */
+
+ul.slider-list .withslider label{padding-top:1em;}
+.multinum-slider{text-align:center;display:inline;}	
+.ui-slider{display:inline;display:inline-block;border-width:1px;border-style:solid;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;margin:1em 1em .2em}
+.ui-slider{width:15em}/* Default is 12 */
 .slider_showmin{float:left;width:3em;font-size:.7em;font-weight:400;text-align:left;margin:1.4em 0 0}
 .slider_showmax{float:right;width:3em;font-size:.7em;font-weight:400;text-align:right;margin:1.4em 0 0}
-.slider_lefttext{display:inline-block;position:relative;top:-.5em;padding-right:1em;text-align:right;font-size:.9em;}
-.slider_righttext{display:inline-block;position:relative;top:-.5em;padding-left:1em;font-size:.9em;}
+.slider_lefttext{display:inline-block;padding-right:1em;text-align:right;font-size:.9em;}
+.slider_righttext{display:inline-block;padding-left:1em;font-size:.9em;}
 .slider_callout{overflow:hidden;position:absolute;top:-1.3em;margin-left:.8em;text-align:right;font-size:.9em}
 .ie .ui-slider{display:block;float:left;}
 .ie .slider_lefttext  {float: left;margin-top:1em;}

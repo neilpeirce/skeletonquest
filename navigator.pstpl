@@ -1,5 +1,5 @@
 	<p class="navigator">{NAVIGATOR}</p>
-	<ul class="tools">
-		<li>{SAVE}</li>
-		<li>{CLEARALL}</li>
-	</ul>
+	{if(!is_empty(SAVE) or !is_empty(CLEARALL),"<ul class='tools'>","")}
+		{if(!is_empty(SAVE),"<li>"+SAVE+"</li>","")}
+		{if(!is_empty(CLEARALL),"<li>"+CLEARALL+"</li>","")}
+	{if(!is_empty(SAVE) or !is_empty(CLEARALL),"</ul>","")}

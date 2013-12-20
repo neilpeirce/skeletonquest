@@ -1,3 +1,3 @@
-<div class="text" id="surveydescription">{SURVEYDESCRIPTION}</div>
-<div class="tools">{PERCENTCOMPLETE}</div>
+{if(!is_empty(SURVEYDESCRIPTION),"<div class='text' id='surveydescription'>"+SURVEYDESCRIPTION+"</div>","")}
+{if(!is_empty(PERCENTCOMPLETE),"<div class='tools'>"+PERCENTCOMPLETE+"</div>","")}
 
