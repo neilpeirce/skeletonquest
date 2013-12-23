@@ -1,4 +1,4 @@
 <div id="completed" class="note">
 	<p class="text">{COMPLETED}</p>
-	if(!is_empty(URL),"<p class='url'>"+URL+"</p>","")}
+	{if(!is_empty(URL),"<p class='url'>"+URL+"</p>","")}
 </div>
