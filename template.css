@@ -122,7 +122,7 @@ ul ul ul { list-style: disc outside; }
 ul ul, ul ol,
 ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
 
-	
+
 ul#surveylist{list-style:none}
 .hide{position:absolute;top:auto;left:-999999px}
 #progress-wrapper{width:272px;font-size:12px;height:20px;}
@@ -133,6 +133,8 @@ ul#surveylist{list-style:none}
 @media reader {
   #progressbar,#progress-pre,#progress-post{display:none}
 }
+.no-js #progress-wrapper .hide{position:relative;left:0}
+.no-js #progress-wrapper #progress-pre,.no-js #progress-wrapper #progress-post{display:none}
 
 .ui-slider{width:12em;display:inline;display:inline-block;border:1px solid #666;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;margin:.4em 0 .2em}
 .slider_showmin{float:left;width:3em;font-size:.7em;font-weight:400;text-align:left;color:#666;margin:1.4em 0 0}
@@ -353,7 +355,7 @@ padding:0;text-align:center;
 /*.dragDropTable .dragDropChoices, .dragDropTable .dragDropRanks{display:block}*/
 /* Fix for odd Mozilla border & padding issues */
 button::-moz-focus-inner,input::-moz-focus-inner {border: 0;padding: 0;}
-textarea,input[type="text"],input.text{max-width:99%}
+textarea,input[type="text"],input.text,select{max-width:99%}
 /*input decoration*/
 input[type="text"],input.text,input[type="password"],input[type="email"],textarea,select
   {
@@ -424,8 +426,6 @@ select:hover,select:focus{
 textarea {min-height: 5em; }
 input[type="checkbox"] {display: inline; }
 textarea[disabled], input.text[disabled], input[type=text][disabled]{background-color:#FFF;border-color:#EEE;}
-
-.no-js input.saveall,.no-js input.clearall,.no-js #moveprevbtn  {display:none}
 
 .asterisk {display:inline;display:inline-block;}
 .asterisk {color:#FF8900;}
@@ -515,7 +515,11 @@ ul.info a {}
 
 
 #progress-wrapper {margin:0.5em auto;}
-#languagechanger {margin:0.5em;}
+.languagechanger {margin:0.5em;}
+.js .changelang{display:none}
+.no-js .languagechanger,.no-js .changelang{display:none}
+.no-js form .languagechanger,.no-js form .changelang{display:inline;display:inline-block;}
+#languageselect-wrapper{margin:0em;text-align:center}
 /*surveylist (home page) */
 #surveylist{margin: 0.5em auto;padding: 0;text-align: center;overflow:auto;display:inline-block;}
 

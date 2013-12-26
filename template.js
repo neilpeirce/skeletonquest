@@ -17,6 +17,7 @@ function alert(text) {
 	jalert(text);
 }
 $(document).ready(function(){
+	//moveLanguageChanger();
 	hovercolumn();
 	tableinput();
 	movePrevButton();
@@ -94,6 +95,13 @@ function movePrevButton(){
         $('<br />').insertAfter('#movenextbtn');
     }
 }
+function moveLanguageChanger(){
+	if($("#languageselect-wrapper").text()){
+		offset=$("#languageselect-wrapper").offset();
+		$("#languageselect-wrapper").css("float",'rigth').css('margin-top','-'+(offset.top)+'px')
+	}
+}
+
 /* Fire event hide and show for "Expression Manager" hide/show */
 jQuery(function($) {
     var _oldShow = $.fn.show;
