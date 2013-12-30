@@ -170,10 +170,6 @@ p img{margin:0;}
 strong{}
 p a, p a:visited { line-height: inherit; }
 
-/* survey list */
-#surveylist-container h3{} 
-ul#surveylist li a{}
-ul#surveylist li a.surveytitle{}
 /* tip color */
 .error{color:#944}
 .good{color:#494}
@@ -522,8 +518,8 @@ ul.info a {}
 #languageselect-wrapper{margin:0em;text-align:center}
 /*surveylist (home page) */
 #surveylist{margin: 0.5em auto;padding: 0;text-align: center;overflow:auto;display:inline-block;}
-
-#surveylist li
+#surveylist li{margin:0 0 0.5em;padding:0}
+#surveylist li a.surveytitle
 {
   background: #f5f5f5; /* Old browsers */
   background: #f5f5f5 -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(150,150,150,.2) 100%); /* FF3.6+ */
@@ -543,11 +539,41 @@ ul.info a {}
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, .75);
   cursor: pointer;
-  margin: 0 0 0.5em;
+  margin: 0;
   line-height: normal;
   padding: 0.6em 1em;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+#surveylist li a.surveytitle:hover,#surveylist li a.surveytitle:focus
+  {
+  color: #222;
+  background: #eee; /* Old browsers */
+  background: #eee -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(150,150,150,.3) 100%); /* FF3.6+ */
+  background: #eee -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(150,150,150,.3)), color-stop(100%,rgba(230,230,230,.3))); /* Chrome,Safari4+ */
+  background: #eee -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(150,150,150,.3) 100%); /* Chrome10+,Safari5.1+ */
+  background: #eee -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(150,150,150,.3) 100%); /* Opera11.10+ */
+  background: #eee -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(150,150,150,.3) 100%); /* IE10+ */
+  background: #eee linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(150,150,150,.3) 100%); /* W3C */
+  border: 1px solid #888;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  }
+
+#surveylist li a.surveytitle:active
+  {
+  color: #222;
+  background: #ddd; /* Old browsers */
+  background: #ddd -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(150,150,150,.3) 100%); /* FF3.6+ */
+  background: #ddd -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(150,150,150,.3))); /* Chrome,Safari4+ */
+  background: #ddd -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(150,150,150,.3) 100%); /* Chrome10+,Safari5.1+ */
+  background: #ddd -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(150,150,150,.3) 100%); /* Opera11.10+ */
+  background: #ddd -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(150,150,150,.3) 100%); /* IE10+ */
+  background: #ddd linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(150,150,150,.3) 100%); /* W3C */
+  border: 1px solid #888;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  }
+
 #surveylist li a{display:block;font-size:0.8em;text-decoration:none}
 #surveylist li a:hover{text-decoration:underline}
 #surveylist li a.surveytitle{font-size:1em}
