@@ -172,7 +172,7 @@ function cloneNavigator(){
 /* Fix the header */
 function headerFixed(){
 	$("#head").wrap( "<div class='head affix'></div>" );;// Use same class than bootstrap
-	$("#container").css("margin-top",$("#head").outerHeight());
+	$("#container .pagetitle").css("padding-top",$("#head").outerHeight());
 }
 /* Replace jquery ui progressbar */
 if(!useDefaultProgress){

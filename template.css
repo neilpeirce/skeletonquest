@@ -34,15 +34,18 @@ a:hover, a:focus { color: #000; }
 #footer a:hover, #footer a:focus, #footer a:active {color: #444;}
 /* Primary button */
 /* Uncomment to change color and background color*/
+/* All the primary button (move next and move prev) */
 /*
-// All the primary button (move next and move prev)
 .ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary,
 .navigator button.button,.navigator button.button:hover,.navigator button.button:focus
  { background-color:#428BC9;color:#FFF; }
- // Only move next and final submit
+*/
+/* Only move next and final submit */
+/*
 #movenextbtn,#movesubmitbtn
  { background-color:#EEA236;color:#FFF; }
- */
+*/
+
 /* Element decoration */
 .note,#tokenmessage{
   border:#ddd 1px solid;background:#eee;
