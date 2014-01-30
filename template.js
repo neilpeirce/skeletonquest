@@ -85,8 +85,8 @@ if(replaceJavascriptAlert){
 }
 /* Adapt column hover */
 function hovercolumn(){
-    $(document).on('mouseover mouseleave',':not(.array-flexible-duel-scale) table.question td',function(e) {
-        if (e.type == 'mouseover') {
+    $(document).on('mouseover mouseleave',':not(.array-flexible-duel-scale) table.question td',function(event){
+        if (event.type == 'mouseover') {
           $(this).closest("table.question").find("col").eq($(this).index()).addClass("hover");
           $(this).closest("table.question").find("thead tr").children().eq($(this).index()).addClass("hover");
         }
@@ -95,8 +95,8 @@ function hovercolumn(){
           $(this).closest("table.question").find("thead tr").children().eq($(this).index()).removeClass("hover");
         }
     });
-    $(document).on('mouseover mouseleave',':.array-flexible-duel-scale table.question td',function(e) {
-        if (e.type == 'mouseover') {
+    $(document).on('mouseover mouseleave','.array-flexible-duel-scale table.question td',function(event){
+        if (event.type == 'mouseover') {
           $(this).closest("table.question").find("col").eq($(this).index()).addClass("hover");
           $(this).closest("table.question").find("thead tr:not(.groups)").children().eq($(this).index()).addClass("hover");
         }
@@ -107,9 +107,9 @@ function hovercolumn(){
     });
 }
 function tableinput(){
-    $(document).on('focusin focusout',':not(.array-flexible-duel-scale) table.question input',function(e) {
+    $(document).on('focusin focusout','.array-flexible-duel-scale table.question input',function(event){
         activeindex=$(this).parents('td').index();
-        if (e.type == 'focusin') {
+        if (event.type == 'focusin') {
           $(this).closest("td").addClass("focus");
           $(this).closest("tr").addClass("focus");
           $(this).closest("table.question").find("col").eq(activeindex).addClass("focus");
@@ -166,7 +166,6 @@ function cloneNavigator(){
 	});
 	$("<div class='navigator-clone tool'/>").appendTo(".cloned-tools");
 	$(".navigator button").each(function(){
-		console.log($(this).clone().removeAttr("id").removeAttr("name").removeAttr("accesskey"));
 		$(this).clone().removeAttr("id").removeAttr("name").removeAttr("accesskey").appendTo('.navigator-clone');
 	});
 }
