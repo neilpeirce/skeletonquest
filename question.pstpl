@@ -9,6 +9,6 @@
 		{QUESTION_VALID_MESSAGE}
 		{if(!is_empty(QUESTION_HELP),"<div class='tip help'>"+QUESTION_HELP+"</div>","")}
 	</div>
-	<div class="answers-wrapper">{ANSWER}</div>
-	{if(!is_empty(QUESTIONHELP),"<div class='question-help'>"+QUESTIONHELP+"</div>","")}
+	<div class="answers-wrapper clearfix">{ANSWER}</div>
+	{if(!is_empty(QUESTIONHELP),"<div class='question-help clearfix'>"+QUESTIONHELP+"</div>","")}
 </div>
