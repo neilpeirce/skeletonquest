@@ -292,7 +292,8 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     left: -4px; /*must have*/
     width: 200px; /*must have*/
     height: 200px; /*must have*/
-}.ui-dialog { position: absolute; top: 0; left: 0; padding: .2em; width: 300px; overflow: hidden; }
+}
+.ui-dialog { position: absolute; top: 0; left: 0; padding: .2em; width: 300px; overflow: hidden; }
 .ui-dialog .ui-dialog-titlebar { padding: .4em 1em; position: relative;  }
 .ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; }
 .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
@@ -563,9 +564,10 @@ body .ui-tooltip { border-width: 2px; }
 .ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .3;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -khtml-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
 /* Some specific css for juery-ui */
 .alert .ui-dialog-titlebar{display:none}
-/* The timer script add z-index:1000, then we use 2000, need 3000 for overlay */
-.ui-widget-overlay{z-index:5}
+.ui-dialog.alert{position:fixed}
+.ui-widget-overlay{z-index:5}/* The timer script add z-index:1000, if we use 2000, need 3000 for overlay */
 .ui-dialog,.ui-datepicker{z-index:5 !important}
+.ui-widget-overlay{position:fixed}
 /* #Some tools */
 .hide{position:absolute;top:auto;left:-999999px}
 .nodisplay{display:none !important;height: 0;width:0;overflow:hidden;visibility:hidden !important;}

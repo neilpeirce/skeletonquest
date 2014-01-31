@@ -78,7 +78,9 @@ if(replaceJavascriptAlert){
 				title: '',
 				dialogClass: 'alert',
 				buttons: { "Ok": function() { $(this).dialog("close"); } },
-				modal: true
+				modal: true,
+				show: { effect: "highlight", duration: 800 },
+				hide: {effect: "fade",duration: 500}
 			});
 		$dialog.dialog('open');
 	}
