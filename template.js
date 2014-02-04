@@ -80,6 +80,8 @@ if(replaceJavascriptAlert){
 				title: '',
 				dialogClass: 'alert',
 				buttons: { "Ok": function() { $(this).dialog("close"); } },
+				show: { effect: "highlight", duration: 800 },
+				hide: {effect: "fade",duration: 500},
 				modal: true
 			});
 		$dialog.dialog('open');
