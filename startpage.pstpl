@@ -24,4 +24,5 @@
 		</div>
 	</div>
 	<div class="pagetitle"><h2 class="surveytitle wrapper">{SURVEYNAME}</h2></div>
-	<div id="content" class="wrapper">
+	<div id="content">
+		<div id="main">
