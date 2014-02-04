@@ -1,10 +1,12 @@
-		</div><!--endcontent-->
-	<div id="navigation">
-		<!-- Place for some navigation -->
-	</div>
-	<div id="extra">
-		<!-- Place for some extra -->
-	</div>
+
+		</div><!--end #main-->
+		<div id="navigation" class="aside">
+			<!-- Place for some navigation -->
+		</div>
+		<div id="extra" class="aside">
+			<!-- Place for some extra -->
+		</div>
+	</div><!--end #content -->
 	<div id="footer">
 		<ul id="credits">
 		<li class="first">Powered by Libre Software</li>

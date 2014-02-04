@@ -15,6 +15,7 @@ useDefaultProgress=false; // Use the default progress-wrapper from LimeSurvey co
 replaceJavascriptAlert=true; // Replace common alert with jquery-ui dialog
 bMoveLanguageSelect=true // Move the language selector to the top
 bCloneNavigator=true // Clone the navigator in the header
+bMoveIndex=true // Clone the navigator in the header
 bHeaderFixed=true;
 /* Some global tools */
 $(document).on("click",".menu-collapse",function(event){
@@ -31,6 +32,7 @@ $(document).ready(function(){
 	if(bCloneNavigator){cloneNavigator();}
 	if(bMoveLanguageSelect){moveLanguageSelect();}
 	if(bHeaderFixed){headerFixed();}
+	if(bMoveIndex){updateIndex();}
 	hovercolumn();
 	tableinput();
 	movePrevButton();
@@ -63,10 +65,10 @@ function updateFilesPrint(){
 	});
 }
 function navbuttonsJqueryUi(){
-    // Just deactivate default jquery-ui button
-    $("#movenextbtn").append(" <i class='ui-icon ui-icon-arrowthick-1-e'>   </i>");
-    $("#moveprevbtn").prepend("<i class='ui-icon ui-icon-arrowthick-1-w'>   </i> ");
-    $("#movesubmitbtn").append(" <i class='ui-icon ui-icon-arrowthickstop-1-s'>   </i>");
+    // Do our own button (not jquery default)
+    $("#movenextbtn").wrapInner("<span class='btn-text ui-button-text' />").append(" <i class='btn-icon ui-icon ui-icon-arrowthick-1-e'>   </i>");
+    $("#moveprevbtn").wrapInner("<span class='btn-text ui-button-text' />").prepend("<i class='btn-icon ui-icon ui-icon-arrowthick-1-w'>   </i> ");
+    $("#movesubmitbtn").wrapInner("<span class='btn-text ui-button-text' />").append(" <i class='btn-icon ui-icon ui-icon-arrowthickstop-1-s'>   </i>");
 }
 
 // Replace common alert with jquery-ui dialog
@@ -78,9 +80,7 @@ if(replaceJavascriptAlert){
 				title: '',
 				dialogClass: 'alert',
 				buttons: { "Ok": function() { $(this).dialog("close"); } },
-				modal: true,
-				show: { effect: "highlight", duration: 800 },
-				hide: {effect: "fade",duration: 500}
+				modal: true
 			});
 		$dialog.dialog('open');
 	}
@@ -135,12 +135,11 @@ function movePrevButton(){
 function moveLanguageSelect(){
 	if($("#changelangbtn").length){
 		$(document).on("click",".menu-lang :not(.ui-state-disabled) a",function(){
-			$("#lang").val($(this).parent('li').data("lang"));
-			 $('#lang').trigger('change');
+			$("#lang").val($(this).parent('li').data("lang")).trigger('change');
 		});
 		var selectedLang=$("#lang").val();
 		var maxWidth=1;
-		newLanguageMenu="<div class='menu-lang-wrapper tool'><a class='ui-button menu-collapse'>"+$("#changelangbtn").text()+"<span class='ui-icon ui-icon-triangle-1-s'></span></a>"
+		newLanguageMenu="<div class='menu-wrapper tool'><a class='ui-button menu-collapse'><span class='ui-button-text menu-text'>"+$("#changelangbtn").text()+"</span><span class='ui-icon menu-icon ui-icon-triangle-1-s'>   </span></a>"
 						+"<ul class='menu-lang menu'>";
 		$("#lang option").each(function(){
 			var stateClass="";
@@ -158,6 +157,119 @@ function moveLanguageSelect(){
 		$(".menu-lang").menu();
 		$("#lang").hide();
 	}
+}
+
+/* Move the index (and accordion it) */
+function updateIndex(){
+    if($("#index").length){
+        //$("#limesurvey").wrapInner("<div id='indexed' />");
+        $("#index").appendTo("#content").wrap("<div class='aside aside-index' />");
+        $("#content").addClass("with-aside");
+        var mainOffset= $("#main").offset().top-$(window).scrollTop();
+        minOffset=0+$(".head.affix").outerHeight();
+        $("#index").css("top",Math.max(mainOffset,minOffset)+"px");
+        $(window).on('scroll',function(){
+            mainOffset= $("#main").offset().top-$(window).scrollTop();
+            newOffset=Math.max(mainOffset,minOffset);
+            $("#index").css("top",Math.max(mainOffset,minOffset)+"px");
+        });
+        $(document).on('click','#index :submit',function(){
+            $(this).clone().removeAttr('id').appendTo("#limesurvey").click();
+        });
+        // Fix for ranking question type
+        if(typeof doDragDropRank!="undefined" && $.isFunction( doDragDropRank )){
+            $('.dragDropTable').each(function(){
+                var bSameListHeigth=$(this).find(".dragDropChoiceList[style]").length;
+                var bSameChoiceHeigth=$(this).find(".choice[style]").length;
+                if(bSameListHeigth || bSameChoiceHeigth){
+                    $(this).find(".choice[style]").removeAttr('style');
+                    var qID=$(this).closest(".question-wrapper").data('qid');
+                    fixChoiceListHeight(qID,bSameChoiceHeigth,bSameListHeigth);
+                }
+            });
+        }
+//        $(document).on('click','#index .container',function(){
+//            $(this).find('ol').toggle();
+//        });
+    accordionIndex();
+    }
+}
+/* Set accordion to index */
+function accordionIndex(){
+  if( $('#index .container h3').length > 0 )
+  {
+    $('#index').addClass('accordion');
+    $('#index .container h3').each(function(index){
+      $(this).addClass("grouptitle");
+      $(this).attr("id",'grouptitle-'+index);
+      $(this).after("<div class='group' id='groupindex-"+index+"'></div>");
+      $(this).nextUntil("h3",'.row').appendTo($("#groupindex-"+index))
+    });
+    // Don't find a good way to use .accordion() then redo it
+    $("#index .container .current").closest(".group").addClass("current");
+    thiscurrent=$("#index .container .group.current")
+    currentindex=$("#index .container .group").index(thiscurrent);
+    // Calculate heiht/maxheight
+    maxheight=0;
+    $("#index .container .group").each(function(){
+      if($(this).height()>maxheight){maxheight=$(this).height();}
+    });
+
+    //$("#index .container .group").height(maxheight);
+    $("#index .container .group.current").addClass("active");
+    $("#index .container .group:not(.current)").addClass("inactive");
+    //$("<b class='more seemore ui-icon ui-icon-plus' />").prependTo(("#index .container h3"));
+    $("#index .container h3").each(function(index){
+        number=parseInt(index)+1;
+        $("<i class='more seemore ui-icon ui-icon-plus'>"+number+"</i>").prependTo($(this));
+    });
+    $("#index .container .active").prev("h3").find(".more").toggleClass('seemore seeless').toggleClass('ui-icon-plus ui-icon-minus');
+    $("#index .container .group:not(.active)").hide(0);
+    //System to set haven't submit button moving
+    containerheight=maxheight*1;
+    $("#index .container h3").each(function(){
+        containerheight+= $(this).outerHeight()*1;
+    });
+    $("#index .container > .row").each(function(){
+        containerheight+= $(this).outerHeight()*1;
+    });
+    containerheight+= $("#index .container h2").outerHeight()*1;
+    containerheight+=$("#index p.navigator").outerHeight()*1;
+    containerheight+=40;// A 40px more 
+//    $("#index .container").height(containerheight);
+    $("#index .container").css('min-height', containerheight+'px');
+    $("#content").css('min-height', containerheight+'px');
+    $("#index .container h3").click(function(){
+      if(!$(this).next(".group").hasClass('active')){
+        $("#index .container .group").slideUp(150);
+        $(this).next(".group").slideDown(150);
+        $("#index .container .group").removeClass('active');
+        $(this).next(".group").addClass('active');
+        $("#index .container h3 .more").removeClass('seeless ui-icon-minus').addClass('seemore ui-icon-plus');
+        $(this).find('.more').removeClass('seemore ui-icon-plus').addClass('seeless ui-icon-minus');
+        $("#index .toggleall").removeClass('seeless ui-icon-minus').addClass('seemore ui-icon-plus');
+      }else{
+        $(this).next(".group").slideUp(150);
+        $("#index .container h3 .more").removeClass('seeless ui-icon-minus').addClass('seemore ui-icon-plus');
+        $(this).next(".group").removeClass('active');
+        $("#index .toggleall").removeClass('seeless ui-icon-minus').addClass('seemore ui-icon-plus');
+      }
+    });
+    $("<div class='toggleall seemore ui-icon ui-icon-plus' />").prependTo("#index h2");
+    $("#index h2").click(function(){
+      if($(this).find('.toggleall').hasClass("seemore")){
+        $("#index .group").slideDown(150);
+        $("#index .group").addClass('active');
+        $('#index h3 .more').removeClass('seemore ui-icon-plus').addClass('seeless ui-icon-minus');
+        $(this).find('.toggleall').removeClass('seemore ui-icon-plus').addClass('seeless ui-icon-minus');
+      }else{
+        $("#index .group").slideUp(150);
+        $("#index .group").removeClass('active');
+        $('#index h3 .more').removeClass('seeless ui-icon-minus').addClass('seemore ui-icon-plus');
+        $(this).find('.toggleall').removeClass('seeless ui-icon-minus').addClass('seemore ui-icon-plus');
+      }
+    });
+  }
 }
 /* Clone the navigator */
 function cloneNavigator(){
