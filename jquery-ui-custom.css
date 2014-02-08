@@ -617,7 +617,7 @@ body .ui-tooltip { border-width: 2px; }
 @media handled,screen and (max-width: 959px) {
 #head .wrapper{padding:0 0.3em;}
 .pagetitle .wrapper{padding:0 0.3em;}
-#head h1{font-size:1em;;}
+#head h1{font-size:1em;}
 #head .navigator-clone .button .ui-icon{display:block;bottom: 0;margin: 0;}
 #head .navigator-clone .btn-text{display:none;}
 }
@@ -625,7 +625,10 @@ body .ui-tooltip { border-width: 2px; }
   #head img.logo{max-height:2em;width:auto;}
 #head .menu-collapse .menu-text{max-width:5em;white-space: nowrap;text-overflow:ellipsis;overflow:hidden;}
 #head .menu-collapse .menu-text:hover,#head .menu-collapse .menu-text:focus{max-width:none;text-align:left;}
+.head.affix{position:absolute}
+.head.affix:after {position:absolute}
 }
+
 #head .sitename{float:left}
 #head .tools{float:right;}
 #content{padding-bottom:3em;}
