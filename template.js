@@ -42,28 +42,8 @@ $(document).ready(function(){
 		$('label > input:checkbox, label > input:radio, input:radio + label, input:checkbox + label').bind('click', function(){
 		});
 	}
-    updateFilesPrint()
 })
-function updateFilesPrint(){
-	$(".files").each(function(){
-		var sFilesInfo=$(this).text();
-		var seperator = '},{';
-		var re = new RegExp(seperator, 'g');
-		sFilesInfo=sFilesInfo.replace(/\\/g, '').replace('[','').replace(']','').replace(re, '}#{');
-		var aFilesInfo=sFilesInfo.split('#');
-		sHtml="<div class='fileinfo'><strong>Fichier(s) envoyé(s) : </strong><ul>";
-		$.each(aFilesInfo, function( index, sFileInfo ) {
-			var aFileInfo=jQuery.parseJSON( sFileInfo );
-			sHtml=sHtml+"<li>"+aFileInfo.name+" : "+aFileInfo.title
-			if(typeof aFileInfo.comment=="string" && aFileInfo.comment!=""){
-				sHtml=sHtml+" ("+aFileInfo.comment+")</li>";
-			}
-			sHtml=sHtml+"</li>";
-		});
-		sHtml=sHtml+"</ul></div>";
-		$(sHtml).insertAfter($(this));
-	});
-}
+
 function navbuttonsJqueryUi(){
     // Do our own button (not jquery default)
     $("#movenextbtn").wrapInner("<span class='btn-text ui-button-text' />").append(" <i class='btn-icon ui-icon ui-icon-arrowthick-1-e'>   </i>");
