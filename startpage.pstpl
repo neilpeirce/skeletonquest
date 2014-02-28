@@ -20,7 +20,7 @@
 <!--[if gt IE 9]><!--><div id="container"><!--<![endif]-->
 	<div id="head">
 		<div class="wrapper">
-			<h1 class="sitename"><a href="#" title="Made with LimeSurvey" class="link-logo"><img src="{TEMPLATEURL}logo.png" alt=" " class="logo"/></a>{SITENAME}</h1>
+			<h1 class="sitename"><img src="{TEMPLATEURL}logo.png" alt="" class="logo"/>{SITENAME}</h1>
 		</div>
 	</div>
 	<div class="pagetitle"><h2 class="surveytitle wrapper">{SURVEYNAME}</h2></div>

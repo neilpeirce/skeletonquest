@@ -66,9 +66,7 @@ ul ul { list-style: circle outside; }
 ul ul ul { list-style: disc outside; }
 ul ul, ul ol,
 ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 95%;}
-img,video,svg,iframe{max-width: 100%;height: auto;
-*width:100%
-}
+img,video,svg,iframe{max-width: 100%;height: auto;}
 /* #Buttons */
 .button,button,input[type="submit"],input[type="reset"],input[type="button"]
 ,.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
@@ -609,6 +607,7 @@ body .ui-tooltip { border-width: 2px; }
 #head h1{display:block;}
 #head img.logo{vertical-align:middle;}
 #head img.logo{max-height:4em;width:auto;}
+#head a.link-logo {text-decoration:none;}
 #head a.link-logo:hover,#head a.link-logo:focus,#head a.link-logo:active{background:transparent;}
 #head a.link-logo {outline: 0 none;}
 .ie6 #head img.logo,.ie7 #head img.logo{height:4em;}
@@ -813,7 +812,7 @@ p.url{font-size:1.2em;text-align:center;font-weight:700}
 @media print {
   #body{background:#FFF;color:#000;}
   #head{background:#FFF;border-color:#999;color:#000;}
-  a.link-logo{display:none}
+  #head img.logo{display:none}
   .pagetitle{background:#FFF;border-color:#999;color:#000;}
   h1.sitename{margin:0 0 0.2em 1em;}
   .grouptitle,.question-text{background:#fff;color:#000}
