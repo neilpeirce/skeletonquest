@@ -12,7 +12,7 @@
     {GOOGLE_ANALYTICS_JAVASCRIPT}
 </head>
 <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} no-js">
-<script type='text/javascript'>/*<![CDATA[*/(function(H){ H.className=H.className.replace(/\bno-js\b/,'js') })(document.getElementsByTagName('body')[0]);/*]]>*/</script>
+<script type='text/javascript'>/*<![CDATA[*/(function(H){ H.className=H.className.replace(/\bno-js\b/,'js') })(document.getElementsByTagName('body')[0]); setJsVar();/*]]>*/</script>
 <!--[if lt IE 7 ]> <div id="container" class="ie ie6 ielt7 ielt8 ielt9"> <![endif]-->
 <!--[if IE 7 ]> <div id="container" class="ie ie7 ielt8 ielt9"> <![endif]-->
 <!--[if IE 8 ]> <div id="container" class="ie ie8 ielt9"> <![endif]-->
